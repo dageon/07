@@ -1,20 +1,14 @@
-#include <stdio.h> 
-void sub(void);
-
+#include <stdio.h>
 int main(void)
 {
-	int i;
-	for(i=0;i<3;i++)
-		sub();
+	int i=10;
+	printf("함수 호출전 i=%d\n", i);
+	inc(i);
+	printf("함수 호출후 i=%d\n", i);
 	return 0;
 }
-
-void sub(void)
+int inc(int counter)
 {
-	int auto_count=0;
-	static int static_count = 0;
-	auto_count++;
-	static_count++;
-	printf("auto_count=%d\n", auto_count);
-	printf("static_count=%d\n", static_count);
+	counter++;
+	return counter;
 }
